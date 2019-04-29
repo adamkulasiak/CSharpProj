@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13AA5820-43BB-479D-8489-7B41D18037E1}</ProjectGuid>
+    <ProjectGuid>{0653ED7C-1911-49D0-9432-E2B39A6E32DA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CSharpZaliczenie</RootNamespace>
-    <AssemblyName>CSharpZaliczenie</AssemblyName>
+    <RootNamespace>Kolekcje</RootNamespace>
+    <AssemblyName>Kolekcje</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Czlowiek.cs" />
-    <Compile Include="IDrukujPracownikow.cs" />
-    <Compile Include="Pracownik.cs" />
-    <Compile Include="Printer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
