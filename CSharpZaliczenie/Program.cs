@@ -10,6 +10,8 @@ namespace CSharpZaliczenie
     {
         static void Main(string[] args)
         {
+            ProgramManager p = new ProgramManager();
+            p.Start();
             //IList<Pracownik> pracownicy = new List<Pracownik>();
             //pracownicy.Add(new Pracownik("Adam", "Nowak", 22, "Programista", 5000, DateTime.Now, 21));
             //pracownicy.Add(new Pracownik("Michal", "Kolenda", 31, "Administrator", 4000, DateTime.Now, 26));
