@@ -10,6 +10,7 @@ namespace CSharpZaliczenie
     {
         public void PrintAllData(Pracownik pracownik)
         {
+            Console.WriteLine("Id: {0}", pracownik.Id);
             Console.WriteLine("Imie: {0}", pracownik.Imie);
             Console.WriteLine("Nazwisko: {0}", pracownik.Nazwisko);
             Console.WriteLine("Wiek: {0}", pracownik.Wiek);
@@ -26,6 +27,7 @@ namespace CSharpZaliczenie
             foreach (var pracownik in pracownicy)
             {
                 Console.WriteLine("----------{0}----------", i++);
+                Console.WriteLine("Id: {0}", pracownik.Id);
                 Console.WriteLine("Imie: {0}", pracownik.Imie);
                 Console.WriteLine("Nazwisko: {0}", pracownik.Nazwisko);
                 Console.WriteLine("Wiek: {0}", pracownik.Wiek);

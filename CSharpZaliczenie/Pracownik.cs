@@ -16,12 +16,13 @@ namespace CSharpZaliczenie
         public int IloscDniUrlopu { get; set; }
 
 
-        public Pracownik(int id, string imie, string naz, uint wiek, string stanowisko, int pensja, DateTime dataZatr, int iloscUrl)
+        public Pracownik(string imie, string naz, int wiek, int id, string stanowisko, int pensja, int iloscUrl)
             :base(imie, naz, wiek)
         {
+            Id = id;
             Stanowisko = stanowisko;
             PensjaMiesieczna = pensja;
-            DataZatrudnienia = dataZatr;
+            DataZatrudnienia = DateTime.Now;
             IloscDniUrlopu = iloscUrl;
         }
 
