@@ -80,21 +80,32 @@ namespace CSharpZaliczenie
 
         private WorkerData ReadWorkerData()
         {
-            Console.WriteLine("Dodaj nowego pracownika: ");
-            Console.Write("Imie: ");
-            string imie = Console.ReadLine();
-            Console.Write("Nazwisko: ");
-            string nazwisko = Console.ReadLine();
-            Console.Write("Wiek: ");
-            int wiek = int.Parse(Console.ReadLine());
-            Console.Write("Stanowisko: ");
-            string stanowisko = Console.ReadLine();
-            Console.Write("Pensja miesieczna: ");
-            int pensja = int.Parse(Console.ReadLine());
-            Console.Write("Ilosc dni urlopu do wykorzystania: ");
-            int urlop = int.Parse(Console.ReadLine());
-            return new WorkerData(imie, nazwisko, wiek, stanowisko, pensja, urlop);
+            WorkerData result;
+            try
+            {
+                Console.WriteLine("Dodaj nowego pracownika: ");
+                Console.Write("Imie: ");
+                string imie = Console.ReadLine();
+                Console.Write("Nazwisko: ");
+                string nazwisko = Console.ReadLine();
+                Console.Write("Wiek: ");
+                int wiek = int.Parse(Console.ReadLine());
+                Console.Write("Stanowisko: ");
+                string stanowisko = Console.ReadLine();
+                Console.Write("Pensja miesieczna: ");
+                int pensja = int.Parse(Console.ReadLine());
+                Console.Write("Ilosc dni urlopu do wykorzystania: ");
+                int urlop = int.Parse(Console.ReadLine());
 
+                result = new WorkerData(imie, nazwisko, wiek, stanowisko, pensja, urlop);
+                return result;
+            }catch(FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                result = null;
+            }
+            return result;
+            
         }
 
         private void GetWorkersOnWorksite()
@@ -141,13 +152,21 @@ namespace CSharpZaliczenie
 
         private void AddWorker()
         {
-            Console.Clear();
-            WorkerData data = ReadWorkerData();
-            Pracownik prac = _workerManager.AddWorker(data.Imie, data.Nazwisko, data.Wiek, data.Stanowisko, data.PensjaMiesieczna, data.IloscDniUrlopu);
-            Console.Clear();
-            Console.WriteLine("Pomyslnie dodano pracownika");
-            _printer.PrintAllData(prac);
-            Console.ReadKey();
+            try
+            {
+                Console.Clear();
+                WorkerData data = ReadWorkerData();
+                Pracownik prac = _workerManager.AddWorker(data.Imie, data.Nazwisko, data.Wiek, data.Stanowisko, data.PensjaMiesieczna, data.IloscDniUrlopu);
+                Console.Clear();
+                Console.WriteLine("Pomyslnie dodano pracownika");
+                _printer.PrintAllData(prac);
+                Console.ReadKey();
+            }catch(NullReferenceException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Wprowadziles niepoprawne dane. Sprobuj jeszcze raz");
+            }
+            
         }
 
         private int GetWorkerId()
