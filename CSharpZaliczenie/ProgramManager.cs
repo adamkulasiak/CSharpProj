@@ -104,8 +104,7 @@ namespace CSharpZaliczenie
                 Console.WriteLine(e.Message);
                 result = null;
             }
-            return result;
-            
+                return result;     
         }
 
         private void GetWorkersOnWorksite()
