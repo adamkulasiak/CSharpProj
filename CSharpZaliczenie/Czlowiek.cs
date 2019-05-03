@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpZaliczenie
 {
-    class Czlowiek
+    abstract class Czlowiek
     {
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
