@@ -170,8 +170,16 @@ namespace CSharpZaliczenie
 
         private int GetWorkerId()
         {
+            int id = 0;
             Console.Write("Podaj id pracownika: ");
-            int id = int.Parse(Console.ReadLine());
+            try
+            {
+                id = int.Parse(Console.ReadLine());
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             return id;
         }
 
