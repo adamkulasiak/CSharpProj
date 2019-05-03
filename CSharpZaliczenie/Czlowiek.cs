@@ -10,13 +10,13 @@ namespace CSharpZaliczenie
     {
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
-        public uint Wiek { get; set; }
+        public int Wiek { get; set; }
 
-        public Czlowiek(string imie, string naz, uint wiek)
+        public Czlowiek(string imie, string naz, int wiek)
         {
-            this.Imie = imie;
-            this.Nazwisko = naz;
-            this.Wiek = wiek;
+            Imie = imie;
+            Nazwisko = naz;
+            Wiek = wiek;
         }
     }
 }

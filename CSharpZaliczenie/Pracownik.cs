@@ -9,19 +9,21 @@ namespace CSharpZaliczenie
 {
     class Pracownik: Czlowiek
     {
+        public int Id { get; set; }
         public string Stanowisko { get; set; }
         public int PensjaMiesieczna { get; set; }
         public DateTime DataZatrudnienia { get; set; }
         public int IloscDniUrlopu { get; set; }
 
 
-        public Pracownik(string imie, string naz, uint wiek, string stanowisko, int pensja, DateTime dataZatr, int iloscUrl)
+        public Pracownik(string imie, string naz, int wiek, int id, string stanowisko, int pensja, int iloscUrl)
             :base(imie, naz, wiek)
         {
-            this.Stanowisko = stanowisko;
-            this.PensjaMiesieczna = pensja;
-            this.DataZatrudnienia = dataZatr;
-            this.IloscDniUrlopu = iloscUrl;
+            Id = id;
+            Stanowisko = stanowisko;
+            PensjaMiesieczna = pensja;
+            DataZatrudnienia = DateTime.Now;
+            IloscDniUrlopu = iloscUrl;
         }
 
         public static double SredniaZarobkow(IList<Pracownik> pracownicy)
