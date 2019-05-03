@@ -9,5 +9,6 @@ namespace CSharpZaliczenie
     interface IDrukujPracownikow
     {
         void PrintAllData(IList<Pracownik> pracownicy);
+        void PrintAllData(Pracownik pracownik);
     }
 }
