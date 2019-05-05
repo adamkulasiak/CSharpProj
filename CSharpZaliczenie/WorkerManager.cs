@@ -45,7 +45,7 @@ namespace CSharpZaliczenie
 
         public IEnumerable<Pracownik> GetWorkersOnWorksite(string stanowisko)
         {
-            return _pracownicy.Where(x => x.Stanowisko == stanowisko);
+            return _pracownicy.Where(x => x.Stanowisko.Contains(stanowisko));
         }
 
         public int GetId()
